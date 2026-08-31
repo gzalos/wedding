@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Γιώργος & Κατερίνα - Προσκλητήριο Γάμου</title>
+
+    <!-- Open Graph / Meta Tags για Κοινοποίηση (Viber, WhatsApp, Social Media) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Γιώργος & Κατερίνα - Προσκλητήριο Γάμου">
+    <meta property="og:description" content="Με μεγάλη χαρά σας προσκαλούμε να μοιραστείτε μαζί μας την πιο σημαντική στιγμή της ζωής μας, τον γάμο μας, που θα τελεστεί το Σάββατο 9 Ιανουαρίου 2027.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            background-color: #fcfbf9;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+            color: #ffffff;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero .date {
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border-top: 1px solid rgba(255, 255, 255, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+            padding: 10px 20px;
+            margin-top: 15px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            font-size: 2rem;
+            color: #fff;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+        }
+
+        /* Invitation Message */
+        .invitation-text {
+            padding: 100px 20px 40px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .invitation-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: #8c7355;
+            margin-bottom: 20px;
+        }
+
+        .invitation-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Main Actions Section (RSVP & Gifts) */
+        .actions-section {
+            text-align: center;
+            padding: 20px 20px 40px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background-color: #8c7355;
+            color: #ffffff;
+            border: none;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(140, 115, 85, 0.3);
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            background-color: #6e5a42;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(140, 115, 85, 0.4);
+        }
+
+        .btn-outline {
+            background-color: #ffffff;
+            color: #8c7355;
+            border: 1px solid #8c7355;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .btn-outline:hover {
+            background-color: #8c7355;
+            color: #ffffff;
+        }
+
+        /* Calendar Buttons Section */
+        .calendar-section {
+            text-align: center;
+            padding: 10px 20px 60px 20px;
+        }
+
+        .calendar-section p {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .calendar-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-calendar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background-color: #ffffff;
+            color: #8c7355;
+            border: 1px solid #8c7355;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            cursor: pointer;
+        }
+
+        .btn-calendar:hover {
+            background-color: #8c7355;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(140, 115, 85, 0.2);
+        }
+
+        /* Locations & Maps */
+        .locations {
+            padding: 80px 20px;
+            background: #f9f6f0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: #4a4a4a;
+            margin-bottom: 50px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: #8c7355;
+            margin-bottom: 10px;
+        }
+
+        .card-content .time {
+            font-weight: 500;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .card-content p {
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .btn-map {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #8c7355;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .btn-map:hover {
+            background-color: #6e5a42;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 280px;
+            border: 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 700px;
+            margin: 30px auto 0 auto;
+        }
+
+        .contact-card {
+            background: #fcfbf9;
+            border: 1px solid #f0ebe1;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .contact-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: #8c7355;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #4a4a4a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: #8c7355;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #aaa;
+            background: #fcfbf9;
+            border-top: 1px solid #f0ebe1;
+        }
+
+        /* Modals (RSVP & Gifts) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            background: #ffffff;
+            padding: 35px 30px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            text-align: left;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: #aaa;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #8c7355;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .modal-box p.modal-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8c7355;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #8c7355;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: #6e5a42;
+        }
+
+        .form-message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        /* Bank / Gift Card Styles */
+        .bank-card {
+            background: #fcfbf9;
+            border: 1px solid #f0ebe1;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .bank-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #8c7355;
+            margin-bottom: 5px;
+        }
+
+        .bank-card p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .iban-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border: 1px solid #e5dfd3;
+            padding: 8px 12px;
+            border-radius: 6px;
+            gap: 10px;
+        }
+
+        .iban-text {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #333;
+            word-break: break-all;
+        }
+
+        .btn-copy {
+            background-color: #8c7355;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .btn-copy:hover {
+            background-color: #6e5a42;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero .date { font-size: 1.1rem; }
+            .invitation-text { padding: 60px 20px 20px 20px; }
+            .calendar-buttons { flex-direction: column; align-items: center; }
+            .btn-calendar { width: 100%; max-width: 280px; justify-content: center; }
+            .actions-section { flex-direction: column; align-items: center; }
+            .btn-main { width: 100%; max-width: 280px; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Γιώργος & Κατερίνα</h1>
+        <div class="date">09 . 01 . 2027</div>
+        <a href="#invitation" class="scroll-down">↓</a>
+    </section>
+
+    <!-- Μήνυμα Πρόσκλησης -->
+    <section id="invitation" class="invitation-text">
+        <h2>Σας Προσκαλούμε</h2>
+        <p>
+            Με μεγάλη χαρά σας προσκαλούμε να μοιραστείτε μαζί μας την πιο σημαντική στιγμή της ζωής μας, τον γάμο μας, που θα τελεστεί το Σάββατο 9 Ιανουαρίου 2027.
+        </p>
+    </section>
+
+    <!-- Κουμπιά Δράσης (RSVP & Λίστα Δώρων) -->
+    <section class="actions-section">
+        <button onclick="openModal('rsvpModal')" class="btn-main">
+            ✨ Δήλωση Συμμετοχής (RSVP)
+        </button>
+        <button onclick="openModal('giftModal')" class="btn-main btn-outline">
+            🎁 Η Ευχή σας, Δώρο μας
+        </button>
+    </section>
+
+    <!-- Κουμπιά Προσθήκης στο Ημερολόγιο -->
+    <section class="calendar-section">
+        <p>Προσθέστε το συμβάν στο ημερολόγιό σας:</p>
+        <div class="calendar-buttons">
+            <!-- Google Calendar (Διορθωμένο link) -->
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%CE%93%CE%AC%CE%BC%CE%BF%CF%82+%CE%93%CE%B9%CF%8E%CF%81%CE%B3%CE%BF%CF%85+%26+%CE%9A%CE%B1%CF%84%CE%B5%CF%81%CE%AF%CE%BD%CE%B1%CF%82&dates=20270109T160000Z/20270109T230000Z&details=%CE%93%CE%AC%CE%BC%CE%BF%CF%82+%CE%93%CE%B9%CF%8E%CF%81%CE%B3%CE%BF%CF%85+%CE%B8.+%CE%96%CE%B1%CE%BB%CE%BF%CE%BA%CF%8E%CF%83%CF%84%CE%B1+%CE%BA%CE%B1%CE%B9+%CE%9A%CE%B1%CF%84%CE%B5%CF%81%CE%AF%CE%BD%CE%B1%CF%82+%CE%92%CE%B1%CF%83%CE%B9%CE%BB%CE%B5%CE%AF%CE%BF%CF%85.&location=%CE%99%CE%B5%CF%81%CF%8C%CF%82+%CE%9D%CE%B1%CF%8C%CF%82+%CE%95%CF%85%CE%B1%CE%B3%CE%B3%CE%B5%CE%BB%CE%B9%CF%83%CE%BC%CE%BF%CF%8D+%CF%84%CE%B7%CF%82+%CE%98%CE%B5%CE%BF%CF%84%CF%8C%CE%BA%CE%BF%CF%85,+%CE%9A%CE%AC%CE%BD%CE%B7%CE%B8%CE%BF%CF%82,+%CE%A7%CE%B1%CE%BB%CE%BA%CE%AF%CE%B4%CE%B1" 
+               target="_blank" rel="noopener noreferrer" class="btn-calendar">
+                📅 Google Calendar
+            </a>
+            
+            <!-- Apple / Outlook / iCal -->
+            <button onclick="downloadICS()" class="btn-calendar">
+                🍏 Apple / Outlook (.ics)
+            </button>
+        </div>
+    </section>
+
+    <!-- Τοποθεσίες & Χάρτες -->
+    <section class="locations">
+        <h2 class="section-title">Τοποθεσίες</h2>
+        <div class="cards-container">
+            
+            <!-- Εκκλησία -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Η Τελετή</h3>
+                    <div class="time">Ώρα: 18:00</div>
+                    <p>Ιερός Ναός Ευαγγελισμού της Θεοτόκου<br><small>Χαλκοδόντος 15, Κάνηθος, Χαλκίδα</small></p>
+                    <a href="https://maps.app.goo.gl/hkAqxnqUdvZen1mM9" target="_blank" rel="noopener noreferrer" class="btn-map">Οδηγίες Πλοήγησης</a>
+                </div>
+                <iframe 
+                    class="map-container"
+                    title="Χάρτης Εκκλησίας"
+                    src="https://www.google.com/maps?q=Ιερός+Ναός+Ευαγγελισμού+της+Θεοτόκου+Κάνηθος+Χαλκίδα&t=k&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Δεξίωση -->
+            <div class="card">
+                <div class="card-content">
+                    <h3>Η Δεξίωση</h3>
+                    <div class="time">Μετά την τελετή</div>
+                    <p>Κτήμα Άμπελις<br><small>Μύτικας, Χαλκίδα</small></p>
+                    <a href="https://maps.app.goo.gl/9kWmaqVnBpTWe3Qj7" target="_blank" rel="noopener noreferrer" class="btn-map">Οδηγίες Πλοήγησης</a>
+                </div>
+                <iframe 
+                    class="map-container"
+                    title="Χάρτης Δεξίωσης"
+                    src="https://www.google.com/maps?q=Κτήμα+Άμπελις+Χαλκίδα&t=k&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Επικοινωνία -->
+    <section class="contact-section">
+        <h2 class="section-title">Επικοινωνία</h2>
+        <div class="contact-container">
+            <div class="contact-card">
+                <h4>Γιώργος Ζαλοκώστας</h4>
+                <a href="tel:+306993131755">+30 699 313 1755</a>
+            </div>
+            <div class="contact-card">
+                <h4>Κατερίνα Βασιλείου</h4>
+                <a href="tel:+306976387092">+30 697 638 7092</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Γιώργος & Κατερίνα • 09.01.2027</p>
+    </footer>
+
+    <!-- MODAL: RSVP -->
+    <div id="rsvpModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('rsvpModal')">&times;</button>
+            <h3>Δήλωση Συμμετοχής</h3>
+            <p class="modal-desc">Παρακαλούμε συμπληρώστε την φόρμα έως τις 10 Δεκεμβρίου 2026 για να μας διευκολύνετε στην οργάνωση.</p>
+            
+            <form id="rsvpForm" onsubmit="submitRSVP(event)">
+                <div class="form-group">
+                    <label for="fullname">Ονοματεπώνυμο *</label>
+                    <input type="text" id="fullname" name="fullname" required placeholder="π.χ. Νίκος Παπαδόπουλος">
+                </div>
+                <div class="form-group">
+                    <label for="attendance">Κατάσταση Συμμετοχής *</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="Θα παρευρεθώ/οῦμε">Θα παρευρεθώ / ούμε</option>
+                        <option value="Δεν θα μπορέσω/σουμε">Δεν θα μπορέσω / ούμε</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Αριθμός Ατόμων *</label>
+                    <input type="number" id="guests" name="guests" min="1" max="10" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Σχόλια / Διατροφικές Προτιμήσεις</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="π.χ. Απαιτείται παιδικό κάθισμα ή ειδικό γεύμα..."></textarea>
+                </div>
+                <button type="submit" id="submitBtn" class="form-submit">Αποστολή Συμμετοχής</button>
+                <div id="formMessage" class="form-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: Λίστα Δώρων / IBAN -->
+    <div id="giftModal" class="modal-overlay">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('giftModal')">&times;</button>
+            <h3>Η Ευχή σας, Δώρο μας</h3>
+            <p class="modal-desc">Η μεγαλύτερη χαρά για εμάς είναι η παρουσία σας στην πιο όμορφη μέρα της ζωής μας. Αν επιθυμείτε να μας στηρίξετε στο ξεκίνημα του κοινού μας μέλλοντος, μπορείτε να χρησιμοποιήσετε τους παρακάτω λογαριασμούς:</p>
+            
+            <!-- Εθνική Τράπεζα -->
+            <div class="bank-card">
+                <h4>Εθνική Τράπεζα (ETE)</h4>
+                <p>Δικαιούχος: Γιώργος Ζαλοκώστας & Κατερίνα Βασιλείου</p>
+                <div class="iban-row">
+                    <span class="iban-text" id="iban1">GR3301101250000012548796321</span>
+                    <button class="btn-copy" onclick="copyIBAN('iban1', this)">Αντιγραφή</button>
+                </div>
+            </div>
+
+            <!-- Revolut -->
+            <div class="bank-card">
+                <h4>Revolut</h4>
+                <p>Δικαιούχος: Γιώργος Ζαλοκώστας</p>
+                <div class="iban-row">
+                    <span class="iban-text" id="iban2">LT583250001234567890</span>
+                    <button class="btn-copy" onclick="copyIBAN('iban2', this)">Αντιγραφή</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Διαχείριση Modals
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Κλείσιμο modal με κλικ έξω από το κουτί
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Αντιγραφή IBAN
+        function copyIBAN(elementId, btnElement) {
+            const ibanText = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(ibanText).then(() => {
+                const originalText = btnElement.innerText;
+                btnElement.innerText = 'Αντιγράφηκε! ✔';
+                btnElement.style.backgroundColor = '#5c7a5b';
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                    btnElement.style.backgroundColor = '#8c7355';
+                }, 2000);
+            }).catch(err => {
+                alert('Ατυχία στην αντιγραφή. Παρακαλώ επιλέξτε χειροκίνητα.');
+            });
+        }
+
+        // Υποβολή RSVP προς Google Apps Script
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzIuk32WJ3gODJjzcm6W4pdzThZFIs5R-sSITxQOAhwsOq-Bf44lGag2cPtZQfTpStw/exec";
+
+        function submitRSVP(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Αποστολή...';
+            formMessage.style.display = 'none';
+
+            const formData = {
+                fullname: document.getElementById('fullname').value,
+                attendance: document.getElementById('attendance').value,
+                guests: document.getElementById('guests').value,
+                notes: document.getElementById('notes').value
+            };
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#5c7a5b';
+                formMessage.innerHTML = '<strong>Ευχαριστούμε πολύ! Η απάντησή σας καταχωρήθηκε επιτυχώς.</strong>';
+                document.getElementById('rsvpForm').reset();
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Αποστολή Συμμετοχής';
+                
+                setTimeout(() => {
+                    closeModal('rsvpModal');
+                    formMessage.style.display = 'none';
+                }, 3500);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#a94442';
+                formMessage.innerHTML = 'Υπήρξε κάποιο πρόβλημα. Παρακαλώ δοκιμάστε ξανά.';
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Αποστολή Συμμετοχής';
+            });
+        }
+
+        // Δημιουργία και λήψη του .ics αρχείου
+        function downloadICS() {
+            const title = "Γάμος Γιώργου & Κατερίνας";
+            const description = "Γάμος Γιώργου Ζαλοκώστα και Κατερίνας Βασιλείου.";
+            const location = "Ιερός Ναός Ευαγγελισμού της Θεοτόκου, Χαλκοδόντος 15, Κάνηθος, Χαλκίδα";
+            const startDate = "20270109T160000Z";
+            const endDate = "20270109T230000Z";
+
+            const icsData = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wedding Invitation//EL
+BEGIN:VEVENT
+SUMMARY:${title}
+DESCRIPTION:${description}
+LOCATION:${location}
+DTSTART:${startDate}
+DTEND:${endDate}
+STATUS:CONFIRMED
+SEQUENCE:0
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'wedding_giorgos_katerina.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+</html>
