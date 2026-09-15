@@ -549,7 +549,7 @@
     <section id="invitation" class="invitation-text">
         <h2>Σας Προσκαλούμε</h2>
         <p>
-            Με μεγάλη χαρά σας προσκαλούμε να μοιραστείτε μαζί μας την πιο σημαντική στιγμή της ζωής μας, τον γάμο μας, που θα τελεστεί το Σάββατο 9 Ιανουαρίου 2027.
+            με μεγάλη μας χαρά να μοιραστείτε μαζί μας την πιο σημαντική στιγμή της ζωής μας, τον γάμο μας, που θα τελεστεί το Σάββατο 9 Ιανουαρίου 2027.
         </p>
     </section>
 
@@ -558,9 +558,7 @@
         <button onclick="openModal('rsvpModal')" class="btn-main">
             ✨ Δήλωση Συμμετοχής (RSVP)
         </button>
-        <button onclick="openModal('giftModal')" class="btn-main btn-outline">
-            🎁 Το δώρο σας για το νέο μας ξεκίνημα
-        </button>
+       
     </section>
 
     <!-- Κουμπιά Προσθήκης στο Ημερολόγιο -->
@@ -675,34 +673,7 @@
         </div>
     </div>
 
-    <!-- MODAL: Λίστα Δώρων / IBAN -->
-    <div id="giftModal" class="modal-overlay">
-        <div class="modal-box">
-            <button class="modal-close" onclick="closeModal('giftModal')">&times;</button>
-            <h3>Το δώρο σας για το νέο μας ξεκίνημα</h3>
-            <p class="modal-desc">Η μεγαλύτερη χαρά για εμάς είναι η παρουσία σας στην πιο όμορφη μέρα της ζωής μας. Αν επιθυμείτε να μας στηρίξετε στο ξεκίνημα του κοινού μας μέλλοντος, μπορείτε να χρησιμοποιήσετε τους παρακάτω λογαριασμούς:</p>
-            
-            <!-- Εθνική Τράπεζα -->
-            <div class="bank-card">
-                <h4>Τράπεζα Πειραιώς</h4>
-                <p>Δικαιούχος: ΓΕΩΡΓΙΟΣ ΖΑΛΟΚΩΣΤΑΣ & ΒΑΣΙΛΕΙΟΥ ΑΙΚΑΤΕΡΙΝΗ</p>
-                <div class="iban-row">
-                    <span class="iban-text" id="iban1">GR5801721590005159120140474</span>
-                    <button class="btn-copy" onclick="copyIBAN('iban1', this)">Αντιγραφή</button>
-                </div>
-            </div>
-
-            <!-- Revolut -->
-            <div class="bank-card">
-                <h4>Revolut</h4>
-                <p>Δικαιούχος: GEORGIOS ZALOKOSTAS</p>
-                <div class="iban-row">
-                    <span class="iban-text" id="iban2">LT403250033826443077</span>
-                    <button class="btn-copy" onclick="copyIBAN('iban2', this)">Αντιγραφή</button>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <!-- JavaScript -->
     <script>
@@ -725,22 +696,7 @@
             }
         }
 
-        // Αντιγραφή IBAN
-        function copyIBAN(elementId, btnElement) {
-            const ibanText = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(ibanText).then(() => {
-                const originalText = btnElement.innerText;
-                btnElement.innerText = 'Αντιγράφηκε! ✔';
-                btnElement.style.backgroundColor = '#467360';
-                setTimeout(() => {
-                    btnElement.innerText = originalText;
-                    btnElement.style.backgroundColor = '#5a8f79';
-                }, 2000);
-            }).catch(err => {
-                alert('Ατυχία στην αντιγραφή. Παρακαλώ επιλέξτε χειροκίνητα.');
-            });
-        }
-
+      
         // Υποβολή RSVP προς Google Apps Script
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwgcKjEXeLEeng5Nr5JV0hYMiM5jeY6HIEP5-Glj9MopAj-_96JKTHaDr_kfQtN_ehc8Q/exec";
 
